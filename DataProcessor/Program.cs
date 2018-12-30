@@ -18,7 +18,7 @@ namespace DataProcessor
             if (address.Contains("file"))
             {
                 Console.WriteLine($"Single file {address} selected");
-                ProcessSingleFile(address);
+                ProcessSingleFile(address.Replace("file ", ""));
             }
             else if (address == "--dir")
             {

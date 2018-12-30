@@ -17,7 +17,12 @@ namespace DataProcessor
             if (!File.Exists(InputFilePath))
             {
                 System.Console.WriteLine($"ERROR: file {InputFilePath} does not exist.");
-                return;
+            }
+            else
+            {
+                System.Console.WriteLine("Press y to create a copy");
+                if (System.Console.ReadLine() == "y")
+                    File.Move(InputFilePath, Path.GetDirectoryName(InputFilePath) + "\\MOVED" + Path.GetFileName(InputFilePath));
             }
 
         }
